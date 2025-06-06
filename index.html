@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Warung Makanan</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Warung Makanan</h1>
+  </header>
+
+  <main>
+    <section class="menu">
+      <div class="item">
+        <img src="img/lunch_item.jpg" alt="Nasi Goreng">
+        <h2>Nasi Goreng</h2>
+        <p>Rp 20.000</p>
+        <button onclick="addToCart('Nasi Goreng', 20000)">Tambah</button>
+      </div>
+      <div class="item">
+        <img src="img/lunch_item3.jpg" alt="Mie Ayam">
+        <h2>Mie Ayam</h2>
+        <p>Rp 18.000</p>
+        <button onclick="addToCart('Mie Ayam', 18000)">Tambah</button>
+      </div>
+      <div class="item">
+        <img src="img/lunch_item2.jpg" alt="Sate Ayam">
+        <h2>Sate Ayam</h2>
+        <p>Rp 25.000</p>
+        <button onclick="addToCart('Sate Ayam', 25000)">Tambah</button>
+      </div>
+      <div class="item">
+        <img src="img/breakfast_item2.jpg" alt="Sate Ayam">
+        <h2>Sate Ayam</h2>
+        <p>Rp 30.000</p>
+        <button onclick="addToCart('Sate Ayam', 30000)">Tambah</button>
+      </div>
+    </section>
+
+    <section class="cart">
+      <h2>Keranjang</h2>
+      <ul id="cart-items"></ul>
+      <p>Total: Rp <span id="total">0</span></p>
+      <button onclick="printReceipt()">Cetak Struk</button>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

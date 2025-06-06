@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Login Karyawan</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .login-container {
+      background-color: #fff;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      width: 300px;
+      text-align: center;
+    }
+
+    .login-container h2 {
+      margin-bottom: 1.5rem;
+      color: #333;
+    }
+
+    .login-container label {
+      display: block;
+      text-align: left;
+      margin: 0.5rem 0 0.2rem;
+      color: #555;
+      font-weight: bold;
+    }
+
+    .login-container input {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+      font-size: 14px;
+    }
+
+    .login-container button {
+      width: 100%;
+      padding: 10px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .login-container button:hover {
+      background-color: #45a049;
+    }
+
+    #login-error {
+      margin-top: 0.5rem;
+      color: red;
+      font-size: 13px;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <h2>Login Karyawan</h2>
+    <form onsubmit="return loginKaryawan()">
+      <label for="username">Username:</label>
+      <input type="text" id="username" placeholder="Masukkan username" required>
+
+      <label for="password">Password:</label>
+      <input type="password" id="password" placeholder="Masukkan password" required>
+
+      <button type="submit">Masuk</button>
+    </form>
+    <p id="login-error"></p>
+  </div>
+
+  <script>
+    function loginKaryawan() {
+      const username = document.getElementById("username").value;
+      const password = document.getElementById("password").value;
+
+      // Sementara (bisa kamu ubah sesuai database login)
+      const validUsername = "karyawan";
+      const validPassword = "1234";
+
+      if (username === validUsername && password === validPassword) {
+        localStorage.setItem("isLoggedIn", "true");
+        window.location.href = "index.html"; // atau dashboard.html
+        return false;
+      } else {
+        document.getElementById("login-error").textContent = "Username atau password salah!";
+        return false;
+      }
+    }
+  </script>
+</body>
+</html>
